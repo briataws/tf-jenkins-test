@@ -1,9 +1,7 @@
 def awesomeVersion = 'UNKNOWN'
 pipeline {
   agent {
-    ecs {
-        inheritFrom 'ecs'
-        image 'bcarpio/terraform-kitchen'
+    label 'ecs'
     }
   }
   options {
