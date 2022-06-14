@@ -2,7 +2,7 @@ def awesomeVersion = 'UNKNOWN'
 pipeline {
   agent {
     ecs {
-      inheritFrom 'ecs-cloud'
+      inheritFrom 'ecs'
       image 'bcarpio/terraform-jnlp-slave'
     }
   }
