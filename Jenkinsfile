@@ -3,7 +3,6 @@ pipeline {
   agent {
     label 'ecs'
     }
-  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
   }
