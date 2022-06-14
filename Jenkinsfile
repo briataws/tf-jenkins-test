@@ -1,4 +1,3 @@
-def awesomeVersion = 'UNKNOWN'
 pipeline {
   agent {
     ecs {
@@ -13,8 +12,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        script {
-          awesomeVersion = sh(returnStdout: true, script: 'echo 0.0.1')
+         sh 'terraform -v'
         }
       }
     }
