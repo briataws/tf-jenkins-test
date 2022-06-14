@@ -1,8 +1,11 @@
 def awesomeVersion = 'UNKNOWN'
 pipeline {
   agent {
-    label 'ecs'
+    ecs {
+      inheritFrom 'ecs-cloud'
+      image 'bcarpio/terraform-jnlp-slave'
     }
+  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
   }
