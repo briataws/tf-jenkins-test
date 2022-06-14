@@ -1,10 +1,9 @@
 def awesomeVersion = 'UNKNOWN'
 pipeline {
   agent {
-    docker {
-        reuseNode true
+    ecs {
+        inheritFrom 'ecs'
         image 'bcarpio/terraform-kitchen'
-        args '-v /etc/passwd:/etc/passwd -v /home/ec2-user/.ssh:/home/ec2-user/.ssh -v "$PWD":/usr/src/myapp -w /usr/src/myapp'
     }
   }
   options {
