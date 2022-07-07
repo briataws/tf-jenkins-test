@@ -1,6 +1,7 @@
 pipeline {
   agent {
     ecs {
+      inheritFrom 'ecs'
       image 'bcarpio/terraform-jnlp-slave'
     }
   }
