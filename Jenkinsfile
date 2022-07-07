@@ -3,6 +3,7 @@ pipeline {
     ecs {
       inheritFrom 'ecs'
       image 'bcarpio/terraform-jnlp-slave'
+      reuseNode true
     }
   }
   options {
